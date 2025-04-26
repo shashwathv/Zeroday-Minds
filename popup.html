@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>InboxArmor</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="icon.png" class="logo" alt="Logo">
+      <div>
+        <h1 class="title">InboxArmor</h1>
+        <p class="subtitle">Phishing Protection</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <button id="analyzeBtn" class="button button-primary">
+        <span class="button-icon">🔍</span> Analyze Email
+      </button>
+      
+      <div id="result" class="result-container hidden">
+        <!-- Result will appear here -->
+      </div>
+      
+      <button id="toggleBtn" class="button button-secondary">
+        <span class="button-icon">📄</span> Show Email Content
+      </button>
+      
+      <div id="content" class="content-area hidden"></div>
+    </div>
+
+    <div class="footer">
+      Made with ❤️ <strong>Team ZeroDay</strong>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
