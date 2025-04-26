@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InboxArmor – AI Phishing Detector</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background: #0e0e0e;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: #00e0ff;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+    }
+
+    nav ul li {
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav ul li:hover {
+      color: #00e0ff;
+    }
+
+    header {
+      text-align: center;
+      padding: 5rem 1rem 2rem;
+      animation: fadeInDown 1s ease;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      color: #00e0ff;
+      margin: 0;
+    }
+
+    p.tagline {
+      color: #cccccc;
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
+
+    main {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 6rem;
+    }
+
+    h2 {
+      color: #00ffb2;
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      line-height: 1.8;
+    }
+
+    .about-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 30px rgba(0, 224, 255, 0.1);
+      backdrop-filter: blur(10px);
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 224, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #222;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .team {
+      margin-top: 0.5rem;
+      color: #00e0ff;
+      font-size: 1rem;
+    }
+
+    /* Cursor Styles */
+    .cursor, .cursor-follower {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    .cursor {
+      width: 10px;
+      height: 10px;
+      background-color: #00e0ff;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-follower {
+      width: 35px;
+      height: 35px;
+      background-color: rgba(0, 224, 255, 0.15);
+      transition: all 0.1s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- Particles Background -->
+<div id="particles-js"></div>
+
+<!-- Navigation -->
+<nav>
+  <h1>InboxArmor</h1>
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Features</li>
+    <li>Tech Stack</li>
+  </ul>
+</nav>
+
+<!-- Header -->
+<header>
+  <h1>InboxArmor</h1>
+  <p class="tagline">Protecting Your Inbox with AI Precision</p>
+</header>
+
+<!-- Main Content -->
+<main>
+  <section>
+    <h2>About InboxArmor</h2>
+    <div class="about-container">
+      <p>
+        InboxArmor is a smart browser extension that uses the power of
+        <span style="color: #00e0ff; font-weight: bold;">Google Gemini AI</span> to detect phishing attempts inside your emails in real-time.
+        Our tool empowers you with instant awareness, helping you stay protected from malicious links and deceptive content — all without compromising privacy.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Features</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Real-Time Scanning</h3>
+        <p>Analyzes your opened emails instantly and flags suspicious ones.</p>
+      </div>
+      <div class="card">
+        <h3>AI Powered</h3>
+        <p>Utilizes cutting-edge LLM (Gemini) for deep phishing detection.</p>
+      </div>
+      <div class="card">
+        <h3>Lightweight & Fast</h3>
+        <p>Minimal memory usage, blazing fast response.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tech Stack</h2>
+    <p>
+      HTML, CSS, JavaScript, Particles.js, Google Gemini API, Manifest V3<br/>
+      Built for Chrome & Firefox.
+    </p>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  Made with ❤️ by Team ZeroDay Minds
+  <div class="team">Karthik &middot; Shashwath &middot; Dishan</div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  // Particles background
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 80, density: { enable: true, value_area: 800 } },
+      color: { value: "#00e0ff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3, random: true },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#00e0ff",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 3,
+        direction: "none",
+        out_mode: "out"
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        resize: true
+      },
+      modes: {
+        repulse: { distance: 100, duration: 0.4 }
+      }
+    },
+    retina_detect: true
+  });
+
+  // Cursor animation
+  const cursor = document.querySelector('.cursor');
+  const follower = document.querySelector('.cursor-follower');
+  let mouseX = 0, mouseY = 0;
+  let posX = 0, posY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.top = `${mouseY}px`;
+    cursor.style.left = `${mouseX}px`;
+  });
+
+  function animate() {
+    posX += (mouseX - posX) / 8;
+    posY += (mouseY - posY) / 8;
+    follower.style.left = `${posX}px`;
+    follower.style.top = `${posY}px`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+</body>
+</html>
